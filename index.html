@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Givaudan Mexico - Import System</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app" class="app-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="brand">
+                <div
+                    style="width: 32px; height: 32px; background: var(--primary-color); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                    G</div>
+                <span>Givaudan MX</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#dashboard" class="nav-item active" data-view="dashboard">
+                    <span class="material-icons-round">dashboard</span>
+                    Dashboard
+                </a>
+                <a href="#calendar" class="nav-item" data-view="calendar">
+                    <span class="material-icons-round">calendar_month</span>
+                    Calendario
+                </a>
+                <a href="#consolidations" class="nav-item" data-view="consolidations">
+                    <span class="material-icons-round">layers</span>
+                    Consolidaciones
+                </a>
+                <a href="#shipments" class="nav-item" data-view="shipments">
+                    <span class="material-icons-round">local_shipping</span>
+                    Embarques
+                </a>
+                <a href="#expedientes" class="nav-item" data-view="expedientes">
+                    <span class="material-icons-round">folder_open</span>
+                    Expedientes (POs)
+                </a>
+                <a href="#proveedores" class="nav-item" data-view="proveedores">
+                    <span class="material-icons-round">business</span>
+                    Proveedores
+                </a>
+                <a href="#materiales" class="nav-item" data-view="materiales">
+                    <span class="material-icons-round">inventory_2</span>
+                    Materiales
+                </a>
+                <a href="#finanzas" class="nav-item" data-view="finanzas">
+                    <span class="material-icons-round">attach_money</span>
+                    Finanzas
+                </a>
+                <a href="#dpi" class="nav-item" data-view="dpi">
+                    <span class="material-icons-round">description</span>
+                    Conversión DPI
+                </a>
+                <a href="#savings" class="nav-item" data-view="savings">
+                    <span class="material-icons-round">savings</span>
+                    Proyectos Ahorro
+                </a>
+                <a href="#siicex" class="nav-item" data-view="siicex">
+                    <span class="material-icons-round">policy</span>
+                    Consulta SIICEX
+                </a>
+                <div
+                    style="margin-top: auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; flex-direction: column; gap: 0.5rem;">
+                    <a href="#" id="btn-export-data" class="nav-item" style="color: var(--accent-color);">
+                        <span class="material-icons-round">download</span>
+                        Exportar Datos
+                    </a>
+                    <a href="#" id="btn-import-data" class="nav-item" style="color: var(--accent-color);">
+                        <span class="material-icons-round">upload</span>
+                        Importar Datos
+                    </a>
+                    <a href="#" id="btn-reset-system" class="nav-item" style="color: #ef4444;">
+                        <span class="material-icons-round">delete_forever</span>
+                        Borrar Todo
+                    </a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="top-bar">
+                <h2 id="page-title">Dashboard General</h2>
+                <div class="user-profile">
+                    <span class="user-name">Admin User</span>
+                    <div class="avatar">AU</div>
+                </div>
+            </header>
+
+            <div id="view-container" class="view-container">
+                <!-- Dynamic Content will be loaded here -->
+                <div class="loading-state">
+                    <div class="spinner"></div>
+                    <p>Cargando sistema...</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script type="module" src="js/app.js?v=26"></script>
+</body>
+
+</html>
